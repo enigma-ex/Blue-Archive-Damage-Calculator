@@ -14,19 +14,13 @@ class Atk {
     }
 
     getATK() {
-
         var total_ATK = (this.base_ATK + this.favorability_ATK + this.back_row_ATK) * (1 + 0.01 * this.equip_ATK + 0.01 * this.passive_skill_ATK);
         console.log(total_ATK);
-
         return total_ATK;
-
     }
 
 }
-
 function display(){
-
-
     console.log(base_ATK.value, favorability_ATK.value, back_row_ATK.value, equip_ATK.value, passive_skill_ATK.value);
     const bATK = Number(base_ATK.value);
     const fATK = Number(favorability_ATK.value);
@@ -41,5 +35,4 @@ function display(){
 
     let el = document.getElementById('output');
     el.textContent = total_ATK;
-
 }
