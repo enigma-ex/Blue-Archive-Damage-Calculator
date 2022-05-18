@@ -22,6 +22,7 @@ class Atk {
 
 function display(){
 
+
     console.log(base_ATK.value, favorability_ATK.value, back_row_ATK.value, equip_ATK.value, passive_skill_ATK.value);
     const bATK = Number(base_ATK.value);
     const fATK = Number(favorability_ATK.value);
