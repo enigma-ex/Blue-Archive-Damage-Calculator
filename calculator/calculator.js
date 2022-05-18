@@ -2,7 +2,6 @@ class Character {
     constructor(ATK) {
         this.ATK = ATK;
     }
-
 }
 
 class Atk {
@@ -15,14 +14,10 @@ class Atk {
     }
 
     getATK() {
-
         var total_ATK = (this.base_ATK + this.favorability_ATK + this.back_row_ATK) * (1 + 0.01 * this.equip_ATK + 0.01 * this.passive_skill_ATK);
         console.log(total_ATK);
-
         return total_ATK;
-
     }
-
 }
 
 function display(){
