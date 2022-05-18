@@ -39,5 +39,5 @@ function display(){
 
 function add_input_check(){
     const list = document.getElementById('add_input');
-    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動1(預設+0%)" />%<br>';
+    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動(預設+0%)" />%<br>';
 }
