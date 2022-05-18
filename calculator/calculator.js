@@ -36,3 +36,8 @@ function display(){
     let el = document.getElementById('output');
     el.textContent = total_ATK;
 }
+
+function add_input_check(){
+    const list = document.getElementById('add_input');
+    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動1(預設+0%)" />%<br>';
+}
