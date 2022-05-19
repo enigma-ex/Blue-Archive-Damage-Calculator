@@ -35,6 +35,18 @@ h1{
 
 .mode-list{
     color:white;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+.mode-list-button{
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,1.00);
+    transition: all 1s ease-out;
+}
+
+.mode-list-button:hover{
+    transform: scale(1.05, 1.05);
 }
 
 #top-bar{
