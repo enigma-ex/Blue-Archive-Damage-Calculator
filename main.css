@@ -41,12 +41,12 @@ h1{
 
 .mode-list-button{
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,1.00);
-    transition: all 1s ease-out;
+    box-shadow: 3px 3px 5px rgba(42, 42, 42, 0.5);
+    transition: all 200ms ease-out;
 }
 
 .mode-list-button:hover{
-    transform: scale(1.05, 1.05);
+    transform: scale(0.95, 0.95);
 }
 
 #top-bar{
