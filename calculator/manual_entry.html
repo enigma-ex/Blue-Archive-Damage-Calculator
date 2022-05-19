@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8"/>
+        <meta name = "description" content = "" />
+        <meta name = "author" content = "">
+        <meta name = "keyword" content = "蔚藍檔案, Blue Archive, ブルーアーカイブ, 傷害計算機, 傷害計算器, damage, calculator" />
+        <meta name = "view" content = "width=device-width, initial-scale=1.0" />
+        <link rel = "stylesheet" href = "manual_entry.css"/> 
+        <title>Manual Entry Mode</title>
+    </head>
+
+    <body>
+        
+        <div id = "air-top-bar"></div>
+        <div id = "top-bar">
+            <a href = "../index.html" id = "home-page-botton"><b>回主頁</b></a>
+        </div>
+        <div id = "air-second-bar"></div>
+        <div id = "second-bar">
+            <h1>蔚藍檔案傷害計算器-手動模式</h1>
+        </div>
+
+        <hr>
+
+        <div class = "bg">
+            <img src="../images/backgrounds/blue archive bg.jpg">
+        </div>
+
+        <br><br>
+        
+        <div class = "non-blank-space">
+
+            <div class = "inputValue">
+                
+                基礎攻擊力 <input type = "text" id = "base_ATK" placeholder = "基礎攻擊力" autofocus/><br>
+                好感攻擊力 <input type = "text" id = "favorability_ATK" placeholder = "好感攻擊力" /><br>
+                後衛攻擊力 <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設無組隊為0)" /><br>
+                裝備攻擊力(%) <input type = "text" id = "equip_ATK" placeholder = "裝備攻擊力(%)" /><br>
+                被動&補助技能(%) <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(%)" /><br>
+                <!-- ///////之後想改成可以任意新增的模式///////// -->
+                <!-- <input type = "text" placeholder = "被動1(預設+0%)" />%<br>
+                <input type = "text" placeholder = "被動2(預設+0%)" />%<br>
+                <input type = "text" placeholder = "被動3(預設+0%)" />%<br>
+                <input type = "text" placeholder = "技能1(預設+0%)" />%<br>
+                <input type = "text" placeholder = "技能2(預設+0%)" />%<br>
+                <input type = "text" placeholder = "技能3(預設+0%)" />%<br> -->
+                <!--  /////////////////////////////////////////  -->
+
+            </div>
+
+            <br>
+
+            <div class = "drop-down-menu">
+
+                場地適性
+                <select type = "text" id = "site_suitability">
+                    <option value = "1">場地適性</option>
+                    <option value = "1.3">SS</option>
+                    <option value = "1.2">S</option>
+                    <option value = "1.1">A</option>
+                    <option value = "1">B</option>
+                    <option value = "0.9">C</option>
+                    <option value = "0.8">D</option>
+                </select>
+
+                <br>
+
+                裝甲剋制
+                <select type = "text" id = "armor_restraint">
+                    <option value = "1">裝甲剋制</option>
+                    <option value = "2">week</option>
+                    <option value = "1">normal</option>
+                    <option value = "0.5">resist</option>
+                </select>
+
+            </div>
+
+            <br><br>
+
+            <img src="https://i.imgur.com/efnHTbj.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()">
+            <!-- <input type="image" id = "button-calculate" onclick = "display()" img src="https://i.imgur.com/efnHTbj.png"> -->
+            <!-- <button id="button-calculate" onclick="display()">計算</button> -->
+            <p id = "output"></p>
+            
+            <script src="calculator.js"></script>
+
+        </div>
+
+    </body>
+</html>
