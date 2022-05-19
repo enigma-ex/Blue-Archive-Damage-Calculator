@@ -46,6 +46,6 @@ function display(){
     var total_ATK = ATK.getATK();
 
     let el = document.getElementById('output');
-    el.textContent = total_ATK;
+    el.textContent = "ATK: " + Math.floor(total_ATK);
 
 }
