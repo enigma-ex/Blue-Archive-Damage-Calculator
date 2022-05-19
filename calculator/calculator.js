@@ -47,6 +47,36 @@ function display(){
     el.textContent = "ATK: " + Math.floor(total_ATK);
 }
 function add_input_check(){
+    let fileItem = document.createElement('div');
+	fileItem.className = 'add-item';
+
+	let input = document.createElement('input');
+	input.type = "text";
+    input.placeholder = "被動(預設+0%)(%)";
+	fileItem.appendChild(input);
+	
+    let delete_button = document.createElement('button');
+	delete_button.textContent = '刪除';
+    delete_button.onclick = "delete_input_check()";
+	fileItem.appendChild(delete_button);
+	
+    let add_input = document.getElementById("add_input");
+	add_input.appendChild(fileItem);
+    /*
     const list = document.getElementById('add_input');
-    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動(預設+0%)" />%<br>';
+    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動(預設+0%)(%)" />';
+    list.innerHTML = list.innerHTML + '<button id = "' + a + '" onclick = "">刪除</button><br>';
+    */
 }
+
+function delete_input_check(){
+    let add_input = document.getElementById("add_input");
+    add_input.removeChild(this.parentNode);
+    this.parentNode.remove();
+}
+/*
+btn.addEventListener('click',function(){
+    //刪除當前按鈕節點所在父節點
+$('file-box').removeChild(this.parentNode);
+this.parentNode.remove();
+}*/
