@@ -24,7 +24,9 @@
         <hr>
 
         <div class = "bg">
-            <img src="../images/backgrounds/blue_archive_bg.jpg">
+
+            <img src="../images/backgrounds/blue_archive_bg.jpg" title="background">
+
         </div>
 
         <br><br>
@@ -54,7 +56,7 @@
             <div class = "drop-down-menu">
 
                 場地適性
-                <select type = "text" id = "site_suitability">
+                <select type = "text" id = "site_suitability" title="site suitability">
                     <option value = "1">場地適性</option>
                     <option value = "1.3">SS</option>
                     <option value = "1.2">S</option>
@@ -67,7 +69,7 @@
                 <br>
 
                 裝甲剋制
-                <select type = "text" id = "armor_restraint">
+                <select type = "text" id = "armor_restraint" title = "armor restraint">
                     <option value = "1">裝甲剋制</option>
                     <option value = "2">week</option>
                     <option value = "1">normal</option>
@@ -78,9 +80,8 @@
 
             <br><br>
 
-            <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()">
-            <!-- <input type="image" id = "button-calculate" onclick = "display()" img src="https://i.imgur.com/efnHTbj.png"> -->
-            <!-- <button id="button-calculate" onclick="display()">計算</button> -->
+            <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()" title="calculate">
+            
             <p id = "output"></p>
             
             <script src="calculator.js"></script>
