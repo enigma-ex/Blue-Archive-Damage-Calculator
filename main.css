@@ -1,13 +1,40 @@
+html {
+    height: 100%;
+}
+
 body{
     margin: 0px;
+    background-image: url("https://i.imgur.com/Tzn5AfY.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 h1{
     padding: 0px 249px 0px 249px;
 }
 
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -999;
+}
+.bg img {
+    min-height: 100%;
+    width: 100%;
+    opacity: 0.6;
+}
+
 .non-blank-space{
     padding: 0px 249px 0px 249px;
+}
+
+.mode-list{
+    color:white;
 }
 
 #top-bar{
@@ -30,4 +57,21 @@ h1{
     font-size: 13px;
     padding: 0px 249px 0px 249px;
     text-align: right;
+}
+
+#second-bar{
+    background-color:#ffffff;
+    height: 85px;
+    line-height: 47px;
+    font-size: 16px;
+    text-align: left;
+    position: fixed;
+    top: 45px;
+    right: 0px;
+    left: 0px;
+    z-index: 99998;
+}
+
+#air-second-bar{
+    height: 77px;
 }

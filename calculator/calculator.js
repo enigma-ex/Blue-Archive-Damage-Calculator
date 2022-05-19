@@ -30,7 +30,6 @@ class Damage {
     }
 }
 function display(){
-    console.log(base_ATK.value, favorability_ATK.value, back_row_ATK.value, equip_ATK.value, passive_skill_ATK.value);
 
     const bATK = Number(base_ATK.value);
     const fATK = Number(favorability_ATK.value);
@@ -44,11 +43,10 @@ function display(){
     var total_ATK = ATK.getATK();
 
     let el = document.getElementById('output');
-    el.textContent = total_ATK;
-}
 
+    el.textContent = "ATK: " + Math.floor(total_ATK);
+}
 function add_input_check(){
     const list = document.getElementById('add_input');
     list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動(預設+0%)" />%<br>';
 }
-
