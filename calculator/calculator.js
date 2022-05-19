@@ -29,6 +29,7 @@ class Damage {
         //TODO
     }
 }
+
 function display(){
 
     const bATK = Number(base_ATK.value);
@@ -46,7 +47,8 @@ function display(){
 
     el.textContent = "ATK: " + Math.floor(total_ATK);
 }
+
 function add_input_check(){
     const list = document.getElementById('add_input');
-    list.innerHTML = list.innerHTML + '<input type = "text" placeholder = "被動(預設+0%)" />%<br>';
+    list.innerHTML = list.innerHTML + '<br><br><input type = "text" placeholder = "被動&輔助技能(預設+0%)" /><br>';
 }

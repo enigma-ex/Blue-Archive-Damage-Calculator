@@ -37,21 +37,16 @@
                 
                 基礎攻擊力 <input type = "text" id = "base_ATK" placeholder = "基礎攻擊力" autofocus/><br>
                 好感攻擊力 <input type = "text" id = "favorability_ATK" placeholder = "好感攻擊力" /><br>
-                後衛攻擊力 <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設無組隊為0)" /><br>
+                後衛攻擊力 <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設0)" /><br>
                 裝備攻擊力(%) <input type = "text" id = "equip_ATK" placeholder = "裝備攻擊力(%)" /><br>
-                被動&補助技能(%) <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(%)" /><br>
-                <!-- ///////之後想改成可以任意新增的模式///////// -->
-                <!-- <input type = "text" placeholder = "被動1(預設+0%)" />%<br>
-                <input type = "text" placeholder = "被動2(預設+0%)" />%<br>
-                <input type = "text" placeholder = "被動3(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能1(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能2(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能3(預設+0%)" />%<br> -->
-                <!--  /////////////////////////////////////////  -->
+                被動&補助技能(%) <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(預設+0%)" />
+                <div id = "add_input">
+                    <button id = "add_input_check" onclick = "add_input_check()">增加</button>
+                </div>
 
             </div>
 
-            <br>
+            <br><br>
 
             <div class = "drop-down-menu">
 
@@ -77,9 +72,7 @@
                 </select>
 
             </div>
-            <div id = "add_input">
-                <button id = "add_input_check" onclick = "add_input_check()">增加被動</button>
-            </div>
+
             <br><br>
 
             <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()" title="calculate">
