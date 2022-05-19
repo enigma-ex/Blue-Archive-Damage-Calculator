@@ -90,7 +90,7 @@ select {
     z-index: 99999;
 }
 
-#home-page-botton{
+#home-page-button{
     background-color:transparent;
     border: 0px;
     padding: 16px 22.5px 16px 22.5px;
@@ -98,7 +98,7 @@ select {
     text-decoration: none;
 }
 
-#home-page-botton:hover{
+#home-page-button:hover{
     background-color: gray;
     opacity: 0.5;
 }
