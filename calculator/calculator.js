@@ -95,13 +95,21 @@ function add_input_check(){
     delete_button.addEventListener('click',function(){
         this.parentNode.remove();
     })
+
+    
+    input_check.addEventListener('keydown',function(event){
+        let enter_to_add_input = document.getElementById('add_input').getElementsByTagName('input');
+        let arr = Array.prototype.slice.call(enter_to_add_input);
+        if (event.key === "Enter" && arr.indexOf(event.target) < arr.length - 1){
+            arr[arr.indexOf(event.target) + 1].focus();
+        }
+    })
 }
 function handle_enter(event){
-    
     let input_value = document.getElementsByClassName('inputValue')[0].getElementsByTagName('input');
     let arr = Array.prototype.slice.call(input_value);
-    if (event.key==="Enter"){
-        console.log(arr[arr.indexOf(event.target) + 1]);
+    if (event.key === "Enter" && arr.indexOf(event.target) < arr.length - 1){
+        console.log(arr);
         arr[arr.indexOf(event.target) + 1].focus();
     }
 }
