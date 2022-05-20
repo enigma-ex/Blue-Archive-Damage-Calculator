@@ -61,7 +61,7 @@ h1{
 }
 
 .button_type1{
-    position: relative;
+    position: absolute;
     width: 53px;
     height: 33px;
     border-radius: 3px;
@@ -71,8 +71,8 @@ h1{
     outline: none;
     color: white;
     font-size: 17px;
-    top: 5px;
-    right: 58px;
+    top: -38px;
+    right: 65px;
 }
 
 .button_type2{
