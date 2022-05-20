@@ -72,7 +72,7 @@ select {
 }
 
 .button_type1{
-    position: absolute;
+    position: relative;
     width: 53px;
     height: 33px;
     border-radius: 3px;
@@ -82,8 +82,8 @@ select {
     outline: none;
     color: white;
     font-size: 17px;
-    top: -38px;
-    right: 65px;
+    top: 5px;
+    right: 58px;
 }
 
 .button_type2{
