@@ -31,21 +31,40 @@ class Damage {
 }
 
 function display(){
+    var bATK, fATK, brATK, eATK, psATK;
 
-    const bATK = Number(base_ATK.value);
-    const fATK = Number(favorability_ATK.value);
-    const brATK = Number(back_row_ATK.value);
-    const eATK = Number(equip_ATK.value);
-    //=====  psATK calculate  =====
-    let psATK_set = document.getElementsByClassName("passive_skill_ATK");
-    let psATK_set_sum = Number(passive_skill_ATK.value);
-    for (let i=0;i<psATK_set.length;i++){
-        psATK_set_sum += Number(psATK_set[i].value);
+    if(base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
+        bATK = Number(base_ATK.value);
+        fATK = Number(favorability_ATK.value);
+        eATK = Number(equip_ATK.value);
     }
-    console.log(psATK_set_sum);
-    const psATK = Number(psATK_set_sum);
-    //==========================
-    const mood = Number(site_suitability.value);
+    else {
+        alert("存在必填項無填入值");
+        return;
+    }
+
+    if(back_row_ATK.value !== '')
+        brATK = Number(back_row_ATK.value);
+    else
+        brATK = 0;
+
+    if(passive_skill_ATK.value !== ''){
+        //=====  psATK calculate  =====
+        let psATK_set = document.getElementsByClassName("passive_skill_ATK");
+        let psATK_set_sum = Number(passive_skill_ATK.value);
+        for (let i=0;i<psATK_set.length;i++){
+            psATK_set_sum += Number(psATK_set[i].value);
+        }
+        console.log(psATK_set_sum);
+        psATK = Number(psATK_set_sum);
+        //==========================
+    }
+    else
+        psATK = 0;
+
+    mood = Number(site_suitability.value);
+
+
 
     console.log(bATK, fATK, brATK, eATK, psATK, mood);
     var ATK = new Atk(bATK, fATK, brATK, eATK, psATK, mood);
