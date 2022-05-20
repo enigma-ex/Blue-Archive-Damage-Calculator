@@ -49,7 +49,6 @@ function display(){
         brATK = 0;
 
     if(passive_skill_ATK.value !== ''){
-        //=====  psATK calculate  =====
         let psATK_set = document.getElementsByClassName("passive_skill_ATK");
         let psATK_set_sum = Number(passive_skill_ATK.value);
         for (let i=0;i<psATK_set.length;i++){
@@ -57,7 +56,6 @@ function display(){
         }
         console.log(psATK_set_sum);
         psATK = Number(psATK_set_sum);
-        //==========================
     }
     else
         psATK = 0;
@@ -73,11 +71,11 @@ function display(){
 }
 
 function add_input_check(){
+
     let add_item = document.createElement("div");
     add_item.className = "add_item";
 
-    let br = document.createElement("br");
-    add_item.appendChild(br);
+    add_item.innerHTML += "<br>";
 
     let input_check = document.createElement("input");
     input_check.text = "text";
@@ -105,3 +103,4 @@ function handle_enter(event){
         arr[arr.indexOf(event.target) + 1].focus();
     }
 }
+
