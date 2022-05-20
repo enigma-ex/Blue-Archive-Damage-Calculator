@@ -15,35 +15,6 @@ h1{
     padding: 0px 249px 0px 249px;
 }
 
-input{
-    outline-style: none ;
-    border: 1px solid #ccc; 
-    border-radius: 3px;
-    padding: 13px 14px;
-    width: 310px;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Microsoft soft";
-}
-
-input:focus{
-    border-color: #66afe9;
-    outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-}
-
-select {
-    width: 160px;
-    padding: 4px 30px 4px 4px;
-    font-size: 14px;
-    border: 1px solid #eee;
-    height: 30px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 .bg {
     position: fixed;
     top: 0;
@@ -69,6 +40,24 @@ select {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.inputValue input{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 310px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+}
+
+.inputValue input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
 
 .button_type1{
@@ -106,6 +95,50 @@ select {
     text-shadow: 0 0 5px black;
     display: inline-flex;
     flex-direction: column;
+}
+
+.drop-down-menu select{
+    outline-style: none ;
+    width: 160px;
+    padding: 4px 30px 4px 4px;
+    font-size: 14px;
+    border: 1px solid #eee;
+    height: 30px;
+    appearance: none;
+}
+
+.drop-down-menu select:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.hint{
+    position: relative;
+    height: 20px;
+    width: 18px;
+    top: 22px;
+    left: 1px;
+}
+
+.hint_text{
+    position: absolute;
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 999;
+}
+
+.hint:hover .hint_text {
+    visibility: visible;
+}
+
+.hint img{
+    height: 20x;
+    width: 18px;
 }
 
 #top-bar{
@@ -160,6 +193,14 @@ select {
     height: 77px;
 }
 
+#site_suitability{
+    border-radius: 3px;
+}
+
+#armor_restraint{
+    border-radius: 3px;
+}
+
 #add_input{
     position: relative;
     width: 400px;
@@ -179,30 +220,3 @@ select {
     color: white;
     text-shadow: 0 0 5px black;
 }
-
-.hint{
-    position: relative;
-    height: 20px;
-    width: 18px;
-    top: 22px;
-    left: 1px;
-}
-
-.hint_text{
-    position: absolute;
-    visibility: hidden;
-    width: 200px;
-    background-color: black;
-    text-align: center;
-    border-radius: 3px;
-    z-index: 999;
-}
-.hint:hover .hint_text {
-    visibility: visible;
-}
-
-.hint img{
-    height: 20x;
-    width: 18px;
-}
-
