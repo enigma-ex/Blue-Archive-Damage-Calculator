@@ -35,23 +35,33 @@
 
             <div class = "inputValue">
                 
-                基礎攻擊力 <input type = "text" id = "base_ATK" placeholder = "基礎攻擊力" autofocus/><br>
+                基礎攻擊力 <input type = "text" id = "base_ATK" placeholder = "基礎攻擊力" autofocus/>
+                <div class="hint">?
+                    <p class="hint_text">基礎攻擊力可以在角色升級面板看到</p>
+                </div>
                 好感攻擊力 <input type = "text" id = "favorability_ATK" placeholder = "好感攻擊力" /><br>
-                後衛攻擊力 <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設無組隊為0)" /><br>
+                <div class="hint">?
+                    <p class="hint_text">好感攻擊力可以在momo talk中看到</p>
+                </div>
+                後衛攻擊力 <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設0)" /><br>
+                <div class="hint">?
+                    <p class="hint_text">後衛攻擊力在編成時，可以在支援欄位看到</p>
+                </div>
                 裝備攻擊力(%) <input type = "text" id = "equip_ATK" placeholder = "裝備攻擊力(%)" /><br>
-                被動&補助技能(%) <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(%)" /><br>
-                <!-- ///////之後想改成可以任意新增的模式///////// -->
-                <!-- <input type = "text" placeholder = "被動1(預設+0%)" />%<br>
-                <input type = "text" placeholder = "被動2(預設+0%)" />%<br>
-                <input type = "text" placeholder = "被動3(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能1(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能2(預設+0%)" />%<br>
-                <input type = "text" placeholder = "技能3(預設+0%)" />%<br> -->
-                <!--  /////////////////////////////////////////  -->
+                <div class="hint">?
+                    <p class="hint_text">裝備攻擊可以在基本情棒的裝備欄看到</p>
+                </div>
+                被動&補助技能(%) <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(預設+0%)" />
+                <div class="hint">?
+                    <p class="hint_text">被動&補助技能可以在角色技能中看到</p>
+                </div>
+                <div id = "add_input">
+                    <button id = "add_input_check" onclick = "add_input_check()">增加</button>
+                </div>
 
             </div>
 
-            <br>
+            <br><br>
 
             <div class = "drop-down-menu">
 
@@ -81,7 +91,7 @@
             <br><br>
 
             <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()" title="calculate">
-            
+
             <p id = "output"></p>
             
             <script src="calculator.js"></script>

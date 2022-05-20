@@ -128,6 +128,25 @@ select {
     height: 77px;
 }
 
+#add_input{
+    position: relative;
+}
+
+#add_input_check{
+    position: absolute;
+    width: 53px;
+    height: 33px;
+    border-radius: 3px;
+    border-color: #2d4664;
+    background: #2d4664;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    top: -38px;
+    right: 6px;
+}
+
 #button-calculate{
     height: 125px;
     width: 125px;
@@ -142,3 +161,19 @@ select {
     color: white;
     text-shadow: 0 0 5px black;
 }
+
+.hint{
+    position: relative;
+}
+
+.hint_text{
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    text-align: center;
+    position: absolute;
+}
+.hint:hover .hint_text {
+    visibility: visible;
+}
+
