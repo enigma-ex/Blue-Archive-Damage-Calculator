@@ -194,6 +194,7 @@ select {
     background-color: black;
     text-align: center;
     position: absolute;
+    z-index: 999;
 }
 .hint:hover .hint_text {
     visibility: visible;
