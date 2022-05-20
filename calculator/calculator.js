@@ -79,6 +79,9 @@ function add_input_check(){
     let add_item = document.createElement("div");
     add_item.className = "add_item";
 
+    let br = document.createElement("br");
+    add_item.appendChild(br);
+
     let input_check = document.createElement("input");
     input_check.text = "text";
     input_check.className = "passive_skill_ATK";
@@ -87,6 +90,7 @@ function add_input_check(){
 
     let delete_button = document.createElement("button");
     delete_button.textContent = "刪除";
+    delete_button.className = "button_type2";
     add_item.append(delete_button);
 
     let add_input = document.getElementById("add_input");
