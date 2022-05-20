@@ -63,9 +63,6 @@ function display(){
         psATK = 0;
 
     mood = Number(site_suitability.value);
-
-
-
     console.log(bATK, fATK, brATK, eATK, psATK, mood);
     var ATK = new Atk(bATK, fATK, brATK, eATK, psATK, mood);
     var total_ATK = ATK.getATK();
@@ -94,4 +91,13 @@ function add_input_check(){
     delete_button.addEventListener('click',function(){
         this.parentNode.remove();
     })
+}
+function handle_enter(event, inputV){
+    
+    let input_value = document.getElementsByClassName('inputValue')[0].getElementsByTagName('input');
+    let arr = Array.prototype.slice.call(input_value);
+    if (event.key==="Enter"){
+        console.log(arr[arr.indexOf(event.target) + 1]);
+        arr[arr.indexOf(event.target) + 1].focus();
+    }
 }
