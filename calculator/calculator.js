@@ -96,7 +96,7 @@ function add_input_check(){
         this.parentNode.remove();
     })
 }
-function handle_enter(event, inputV){
+function handle_enter(event){
     
     let input_value = document.getElementsByClassName('inputValue')[0].getElementsByTagName('input');
     let arr = Array.prototype.slice.call(input_value);
