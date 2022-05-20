@@ -64,17 +64,13 @@
                 <div class="hint"><img src="../images/buttons/information_button.png">
                     <p class="hint_text">被動&補助技能可以在角色技能中看到</p>
                 </div>
-              
-                <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(預設+0%)" onkeydown = "handle_enter(event)" />
 
-                <div id = "add_input">
-                    <button class = "button_type1" id = "add_input_check" onclick = "add_input_check()">增加</button>
-                </div>
+                <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(預設+0%)" onkeydown = "handle_enter(event)" />
+                <button class = "button_type1" id = "add_input_check" onclick = "add_input_check()">增加</button>
+                <div id = "add_input"></div>
 
             </div>
-
             <br><br>
-
             <div class = "drop-down-menu">
 
                 場地適性
@@ -87,7 +83,6 @@
                     <option value = "0.9">C</option>
                     <option value = "0.8">D</option>
                 </select>
-
                 <br>
 
                 裝甲剋制
@@ -103,7 +98,7 @@
 
             <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()" title="calculate">
             <p id = "output"></p>
-            <script src="calculator.js"></script>
+            <script src="calculator.js" ></script>
 
         </div>
 

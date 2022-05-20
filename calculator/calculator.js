@@ -77,8 +77,7 @@ function add_input_check(){
     let add_item = document.createElement("div");
     add_item.className = "add_item";
 
-    let br = document.createElement("br");
-    add_item.appendChild(br);
+    add_item.innerHTML += "<br>";
 
     let input_check = document.createElement("input");
     input_check.text = "text";
