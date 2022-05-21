@@ -49,7 +49,6 @@ function display(){
         brATK = 0;
 
     if(passive_skill_ATK.value !== ''){
-        //=====  psATK calculate  =====
         let psATK_set = document.getElementsByClassName("passive_skill_ATK");
         let psATK_set_sum = Number(passive_skill_ATK.value);
         for (let i=0;i<psATK_set.length;i++){
@@ -57,7 +56,6 @@ function display(){
         }
         console.log(psATK_set_sum);
         psATK = Number(psATK_set_sum);
-        //==========================
     }
     else
         psATK = 0;
@@ -67,17 +65,20 @@ function display(){
     var ATK = new Atk(bATK, fATK, brATK, eATK, psATK, mood);
     var total_ATK = ATK.getATK();
 
-    let el = document.getElementById('output');
+    let elTitle = document.getElementById('output-title');
+    let elValue = document.getElementById('output-value');
 
-    el.textContent = "ATK: " + Math.floor(total_ATK);
+    elTitle.textContent = "角色攻擊力";
+    elValue.textContent = Math.floor(total_ATK);
+    
+    popup();
 }
 
 function add_input_check(){
     let add_item = document.createElement("div");
     add_item.className = "add_item";
 
-    let br = document.createElement("br");
-    add_item.appendChild(br);
+    add_item.innerHTML += "<br>";
 
     let input_check = document.createElement("input");
     input_check.text = "text";
@@ -96,7 +97,6 @@ function add_input_check(){
         this.parentNode.remove();
     })
 
-    
     input_check.addEventListener('keydown',function(event){
         let enter_to_add_input = document.getElementById('add_input').getElementsByTagName('input');
         let arr = Array.prototype.slice.call(enter_to_add_input);
