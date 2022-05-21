@@ -33,7 +33,21 @@
         
         <div class = "non-blank-space">
 
-            <div class = "output-space"></div>
+            <div class = "box-output">
+                <div class = "box-output-header">
+                    <div class = "box-output-title-warp">
+                        <div class = "box-output-title">結果</div>
+                    </div>
+                </div>
+                <div class = "box-output-main">
+                    <div class = "box-output-result-wrapper">
+                        <div class = "box-output-result">
+                            <p id = "output-title"></p>
+                            <p id = "output-value"></p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
 
             <div class = "inputValue">
 
@@ -98,7 +112,7 @@
             <br><br>
 
             <img src="../images/buttons/start_cal_button.png" data-file-width="125" data-file-height="125" id = "button-calculate" onclick = "display()" title="calculate">
-            <p id = "output"></p>
+
             <script src="calculator.js" ></script>
 
         </div>

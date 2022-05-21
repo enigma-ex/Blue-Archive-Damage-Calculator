@@ -65,9 +65,14 @@ function display(){
     var ATK = new Atk(bATK, fATK, brATK, eATK, psATK, mood);
     var total_ATK = ATK.getATK();
 
-    let el = document.getElementById('output');
+    let elTitle = document.getElementById('output-title');
+    let elValue = document.getElementById('output-value');
 
-    el.textContent = "ATK: " + Math.floor(total_ATK);
+    elTitle.textContent = "角色攻擊力";
+    elValue.textContent = Math.floor(total_ATK);
+
+    popup();
+
 }
 
 function add_input_check(){
@@ -104,3 +109,10 @@ function handle_enter(event){
     }
 }
 
+function popup(){
+
+    let win = document.getElementsByClassName("box-output");
+    win[0].style.opacity = 1;
+    win[0].style.transform = 'scale(1, 1)';
+
+}
