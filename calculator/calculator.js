@@ -121,3 +121,11 @@ function popup(){
     win[0].style.transform = 'scale(1, 1)';
 
 }
+
+function close_window(){
+
+    let win = document.getElementsByClassName("box-output");
+    win[0].style.opacity = 0;
+    win[0].style.transform = 'scale(0, 0)';
+
+}
