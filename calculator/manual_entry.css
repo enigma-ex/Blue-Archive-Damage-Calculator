@@ -284,7 +284,7 @@ h1{
 #button-calculate{
     height: 125px;
     width: 125px;
-    transition: all 1s ease-out;
+    transition: all 200ms ease-out;
 }
 
 #button-calculate:hover{
