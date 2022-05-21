@@ -230,9 +230,11 @@ h1{
 #home-page-button{
     background-color:transparent;
     border: 0px;
+    border-radius: 2px;
     padding: 16px 22.5px 16px 22.5px;
     color: #EEE;
     text-decoration: none;
+    transition: all 200ms ease-out;
 }
 
 #home-page-button:hover{
