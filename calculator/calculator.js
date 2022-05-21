@@ -113,3 +113,11 @@ function handle_enter(event){
         arr[arr.indexOf(event.target) + 1].focus();
     }
 }
+
+function popup(){
+
+    let win = document.getElementsByClassName("box-output");
+    win[0].style.opacity = 1;
+    win[0].style.transform = 'scale(1, 1)';
+
+}
