@@ -1,0 +1,30 @@
+{
+    "default":[
+        {   
+            "id" : "base_ATK",
+            "placeholder" : "基礎攻擊力",
+            "hint_text" : "基礎攻擊力可以在角色升級面板看到"
+        },
+        {
+            "id" : "favorability_ATK",
+            "placeholder" : "好感攻擊力",
+            "hint_text" : "好感攻擊力可以在momo talk中看到"
+        },
+        {
+            "id" : "back_row_ATK",
+            "placeholder" : "後衛攻擊力(預設0)",
+            "hint_text" : "後衛攻擊力在編成時，可以在支援欄位看到"
+        },
+        {
+            "id" : "equip_ATK",
+            "placeholder" : "裝備攻擊力(%)",
+            "hint_text" : "裝備攻擊可以在基本情報的裝備欄看到"
+        },
+        {
+            "id" : "passive_skill_ATK",
+            "placeholder" : "被動&補助技能(預設+0%)",
+            "hint_text" : "被動&補助技能可以在角色技能中看到"
+        }
+
+    ]
+}
