@@ -1,12 +1,3 @@
-function handle_enter(event){
-    let input_value = document.getElementsByClassName('inputValue')[0].getElementsByTagName('input');
-    let arr = Array.prototype.slice.call(input_value);
-    if (event.key === "Enter" && arr.indexOf(event.target) < arr.length - 1) {
-        console.log(arr);
-        arr[arr.indexOf(event.target) + 1].focus();
-    }
-}
-
 async function default_input_button(){
     const src = "./output.json";
     const response = await fetch(src);
@@ -28,7 +19,6 @@ async function default_input_button(){
         hint_img.src = "../images/buttons/information_button.svg";
         hint_p.className = "hint_text";
         hint_p.textContent = default_data[i]["hint_text"];
-        console.log(i, ATK_input);
 
         // ATK input set
         ATK_input.type = "text";
