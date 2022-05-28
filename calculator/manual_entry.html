@@ -70,23 +70,35 @@
                     </div>
                     <input type = "text" id = "favorability_ATK" placeholder = "好感攻擊力" onkeydown = "handle_enter(event)"/><br>
 
-                    後衛攻擊力 
-                    <div class="hint"><img src="../images/buttons/information_button.svg">
-                        <p class="hint_text">後衛攻擊力在編成時，可以在支援欄位看到</p>
-                    </div>
-                    <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設0)" onkeydown = "handle_enter(event)"/><br>
-
                     裝備攻擊力(%) 
                     <div class="hint"><img src="../images/buttons/information_button.svg">
                         <p class="hint_text">裝備攻擊可以在基本情報的裝備欄看到</p>
                     </div>
                     <input type = "text" id = "equip_ATK" placeholder = "裝備攻擊力(%)" onkeydown = "handle_enter(event)"/><br>
 
-                    被動&補助技能(%) 
+                    後衛攻擊力 
                     <div class="hint"><img src="../images/buttons/information_button.svg">
-                        <p class="hint_text">被動&補助技能可以在角色技能中看到</p>
+                        <p class="hint_text">後衛攻擊力在編成時，可以在支援欄位看到</p>
                     </div>
-                    <input type = "text" id = "passive_skill_ATK" placeholder = "被動&補助技能(預設+0%)" onkeydown = "handle_enter(event)" />
+                    <input type = "text" id = "back_row_ATK" placeholder = "後衛攻擊力(預設0)" onkeydown = "handle_enter(event)"/><br>
+
+                    固有武器攻擊力 
+                    <div class="hint"><img src="../images/buttons/information_button.svg">
+                        <p class="hint_text">固有武器攻擊力可以在固有武器升級介面看到</p>
+                    </div>
+                    <input type = "text" id = "unique_weapon_ATK" placeholder = "固有武器攻擊力(預設0)" onkeydown = "handle_enter(event)"/><br>
+
+                    增益/減益效果(數值) 
+                    <div class="hint"><img src="../images/buttons/information_button.svg">
+                        <p class="hint_text">減益效果請加上負號</p>
+                    </div>
+                    <input type = "text" id = "buff_value_ATK" placeholder = "增益/減益效果(預設+0)" onkeydown = "handle_enter(event)" /><br>
+                    
+                    增益/減益效果(%) 
+                    <div class="hint"><img src="../images/buttons/information_button.svg">
+                        <p class="hint_text">減益效果請加上負號</p>
+                    </div>
+                    <input type = "text" id = "buff_percentage_ATK" placeholder = "增益/減益效果(預設+0%)" onkeydown = "handle_enter(event)" />
                     <button class = "button_type1" id = "add_input_check" onclick = "add_input_check()">增加</button>
                     <div id = "add_input"></div>
 

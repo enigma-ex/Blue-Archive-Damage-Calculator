@@ -15,8 +15,8 @@ function add_input_check(){
 
     let input_check = document.createElement("input");
     input_check.text = "text";
-    input_check.className = "passive_skill_ATK";
-    input_check.placeholder = "被動&輔助技能(%)(預設+0%)";
+    input_check.className = "buff_percentage_ATK";
+    input_check.placeholder = "增益/減益效果(預設+0%)";
     add_item.appendChild(input_check);
 
     let delete_button = document.createElement("button");
