@@ -2,29 +2,45 @@
     "default":[
         {   
             "id" : "base_ATK",
+            "text" : "基礎攻擊力",
             "placeholder" : "基礎攻擊力",
             "hint_text" : "基礎攻擊力可以在角色升級面板看到"
         },
         {
             "id" : "favorability_ATK",
+            "text" : "好感攻擊力",
             "placeholder" : "好感攻擊力",
             "hint_text" : "好感攻擊力可以在momo talk中看到"
         },
         {
-            "id" : "back_row_ATK",
-            "placeholder" : "後衛攻擊力(預設0)",
-            "hint_text" : "後衛攻擊力在編成時，可以在支援欄位看到"
-        },
-        {
             "id" : "equip_ATK",
+            "text" : "裝備攻擊力(%)",
             "placeholder" : "裝備攻擊力(%)",
             "hint_text" : "裝備攻擊可以在基本情報的裝備欄看到"
         },
         {
-            "id" : "passive_skill_ATK",
-            "placeholder" : "被動&補助技能(預設+0%)",
-            "hint_text" : "被動&補助技能可以在角色技能中看到"
+            "id" : "back_row_ATK",
+            "text" : "後衛攻擊力",
+            "placeholder" : "後衛攻擊力(預設0)",
+            "hint_text" : "後衛攻擊力在編成時，可以在支援欄位看到"
+        },
+        {
+            "id" : "unique_weapon_ATK",
+            "text" : "固有武器攻擊力",
+            "placeholder" : "固有武器攻擊力(預設0)",
+            "hint_text" : "固有武器攻擊力可以在固有武器升級界面看到"
+        },
+        {
+            "id" : "buff_value_ATK",
+            "text" : "增益/減益效果(數值)",
+            "placeholder" : "增益/減益效果(預設+0)",
+            "hint_text" : "減益效果請加上負號"
+        },
+        {
+            "id" : "buff_percentage_ATK",
+            "text" : "增益/減益效果(%)",
+            "placeholder" : "增益/減益效果(預設+0%)",
+            "hint_text" : "減亦效果請加上負號"
         }
-
     ]
 }

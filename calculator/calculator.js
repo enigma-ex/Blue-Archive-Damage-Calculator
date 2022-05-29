@@ -82,7 +82,6 @@ function display(){
     elValue.textContent = Math.floor(total_ATK);
     
     popup();
-
 }
 
 function fold_atk(){
