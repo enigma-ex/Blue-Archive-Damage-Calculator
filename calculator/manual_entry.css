@@ -307,3 +307,27 @@ h1{
     height: 25px;
     padding-left: 5px;
 }
+
+#atk-field{
+    width: 400px;
+    overflow: hidden;
+}
+
+#fold-button-atk{
+    height: 50px;
+    width: 340px;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 2px solid #51a0bd;
+    border-radius: 6px;
+    color: #2d4664;
+    background-color: white;
+    cursor: pointer;
+    font-family: "Microsoft soft";
+    transition: all 200ms ease-out;
+}
+
+#fold-button-atk:hover{
+    color: white;
+    background-color: #51a0bd;
+}

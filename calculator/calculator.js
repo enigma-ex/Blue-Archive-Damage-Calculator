@@ -7,18 +7,22 @@ class Character {
 }
 
 class Atk {
-    constructor(base_ATK, favorability_ATK, back_row_ATK, equip_ATK, passive_skill_ATK, site_suitability) {
+    constructor(base_ATK, favorability_ATK, equip_ATK, back_row_ATK, unique_weapon_ATK, buff_value_ATK, buff_percentage_ATK, site_suitability) {
         this.base_ATK = base_ATK;
         this.favorability_ATK = favorability_ATK;
-        this.back_row_ATK = back_row_ATK;
         this.equip_ATK = equip_ATK;
-        this.passive_skill_ATK = passive_skill_ATK;
+        this.back_row_ATK = back_row_ATK;
+        this.unique_weapon_ATK = unique_weapon_ATK;
+        this.buff_value_ATK = buff_value_ATK;
+        this.buff_percentage_ATK = buff_percentage_ATK;
         this.site_suitability = site_suitability;
     }
 
     getATK() {
-        var total_ATK = (this.base_ATK + this.favorability_ATK + this.back_row_ATK) * (1 + 0.01 * this.equip_ATK + 0.01 * this.passive_skill_ATK) * this.site_suitability;
-        console.log(total_ATK);
+        let radix = this.base_ATK + this.favorability_ATK + this.back_row_ATK + this.unique_weapon_ATK + this.buff_value_ATK;
+        let multiplier = 1 + (this.equip_ATK + this.buff_percentage_ATK) * 0.01;
+        let total_ATK = radix * multiplier * this.site_suitability;
+        console.log("radix =", radix, "multiplier =", multiplier, "total_ATK =", total_ATK);
         return total_ATK;
     }
 }
@@ -31,7 +35,8 @@ class Damage {
 }
 
 function display(){
-    var bATK, fATK, brATK, eATK, psATK;
+    let bATK, fATK, eATK, brATK, uwATK, buffpATK;
+    let buffvATK = 0;//testing variable
 
     if(base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
         bATK = Number(base_ATK.value);
@@ -48,22 +53,27 @@ function display(){
     else
         brATK = 0;
 
-    if(passive_skill_ATK.value !== ''){
-        let psATK_set = document.getElementsByClassName("passive_skill_ATK");
-        let psATK_set_sum = Number(passive_skill_ATK.value);
-        for (let i=0;i<psATK_set.length;i++){
-            psATK_set_sum += Number(psATK_set[i].value);
+    if(unique_weapon_ATK.value !== '')
+        uwATK = Number(unique_weapon_ATK.value);
+    else
+        uwATK = 0;
+
+    if(buff_percentage_ATK.value !== ''){
+        let buffpATK_set = document.getElementsByClassName("buff_percentage_ATK");
+        let buffpATK_set_sum = Number(buff_percentage_ATK.value);
+        for (let i=0;i<buffpATK_set.length;i++){
+            buffpATK_set_sum += Number(buffpATK_set[i].value);
         }
-        console.log(psATK_set_sum);
-        psATK = Number(psATK_set_sum);
+        console.log(buffpATK_set_sum);
+        buffpATK = Number(buffpATK_set_sum);
     }
     else
-        psATK = 0;
+        buffpATK = 0;
 
     mood = Number(site_suitability.value);
-    console.log(bATK, fATK, brATK, eATK, psATK, mood);
-    var ATK = new Atk(bATK, fATK, brATK, eATK, psATK, mood);
-    var total_ATK = ATK.getATK();
+    console.log(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
+    let ATK = new Atk(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
+    let total_ATK = ATK.getATK();
 
     let elTitle = document.getElementById('output-title');
     let elValue = document.getElementById('output-value');
@@ -74,50 +84,18 @@ function display(){
     popup();
 }
 
-function add_input_check(index){
-    let add_item = document.createElement("div");
-    add_item.className = "add_item";
+function fold_atk(){
 
-    add_item.innerHTML += "<br>";
+    let atk_field = document.getElementById("atk-field");
+    let fold_button_atk = document.getElementById("fold-button-atk");
 
-    let input_check = document.createElement("input");
-    input_check.text = "text";
-    input_check.className = "passive_skill_ATK";
-    input_check.placeholder = "被動&輔助技能(%)(預設+0%)";
-    add_item.appendChild(input_check);
-
-    let delete_button = document.createElement("button");
-    delete_button.textContent = "刪除";
-    delete_button.className = "button_type2";
-    add_item.append(delete_button);
-
-    let add_input = document.getElementById("add_input"+index);
-    add_input.appendChild(add_item);
-    delete_button.addEventListener('click',function(){
-        this.parentNode.remove();
-    })
-
-    input_check.addEventListener('keydown',function(event){
-        let enter_to_add_input = document.getElementById('add_input'+index).getElementsByTagName('input');
-        let arr = Array.prototype.slice.call(enter_to_add_input);
-        if (event.key === "Enter" && arr.indexOf(event.target) < arr.length - 1){
-            arr[arr.indexOf(event.target) + 1].focus();
-        }
-    })
-}
-
-function popup(){
-
-    let win = document.getElementsByClassName("box-output");
-    win[0].style.opacity = 1;
-    win[0].style.transform = 'scale(1, 1)';
-
-}
-
-function close_window(){
-
-    let win = document.getElementsByClassName("box-output");
-    win[0].style.opacity = 0;
-    win[0].style.transform = 'scale(0, 0)';
+    if(atk_field.style.height === "auto") {
+        atk_field.style.height = 0;
+        fold_button_atk.textContent = "顯示攻擊力";
+    }
+    else {
+        atk_field.style.height = "auto";
+        fold_button_atk.textContent = "隱藏攻擊力";
+    }
 
 }
