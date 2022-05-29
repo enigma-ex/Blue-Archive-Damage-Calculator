@@ -33,7 +33,7 @@ class Damage {
         //TODO
     }
 }
-
+//test
 function display(){
     let bATK, fATK, eATK, brATK, uwATK, buffpATK;
     let buffvATK = 0;//testing variable
