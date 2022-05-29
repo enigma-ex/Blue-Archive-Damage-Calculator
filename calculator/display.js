@@ -33,9 +33,17 @@ async function default_input_button(){
 
         //if buff_value or buff_percentage
         if ((i === 5) || (i === 6)){
+            let v_p="";
+            if (i === 5){
+                v_p = "value";
+            }
+            else{
+                v_p = "percentage";
+            }
+            console.log("v_p = ", v_p);
             input_value.innerHTML += '<button class = "button_type1" id = "add_input_check" \
-                                            onclick = "add_input_check('+i+')">增加</button>';
-            input_value.innerHTML += '<div id = "add_input'+i+'"></div>';
+                                            onclick = "add_input_check(\''+v_p+'\')">增加</button>';
+            input_value.innerHTML += '<div id = "add_input_'+v_p+'"></div>';
         }
         input_value.innerHTML += "<br>";
     }

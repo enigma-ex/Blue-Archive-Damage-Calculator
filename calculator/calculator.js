@@ -33,10 +33,9 @@ class Damage {
         //TODO
     }
 }
-//test
+
 function display(){
-    let bATK, fATK, eATK, brATK, uwATK, buffpATK;
-    let buffvATK = 0;//testing variable
+    let bATK, fATK, eATK, brATK, uwATK, buffpATK, buffvATK;
 
     if(base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
         bATK = Number(base_ATK.value);
@@ -58,6 +57,17 @@ function display(){
     else
         uwATK = 0;
 
+    if(buff_value_ATK.value !== ''){
+        let buffvATK_set = document.getElementsByClassName("buff_value_ATK");
+        console.log(buffvATK_set, "V");
+        let buffvATK_set_sum = Number(buff_value_ATK.value);
+        for (let i=0;i<buffvATK_set.length;i++){
+            buffvATK_set_sum += Number(buffvATK_set[i].value);
+        }
+        console.log(buffvATK_set_sum);
+        buffvATK = Number(buffvATK_set_sum);
+    }
+ 
     if(buff_percentage_ATK.value !== ''){
         let buffpATK_set = document.getElementsByClassName("buff_percentage_ATK");
         let buffpATK_set_sum = Number(buff_percentage_ATK.value);
@@ -70,7 +80,7 @@ function display(){
     else
         buffpATK = 0;
 
-    mood = Number(site_suitability.value);
+   mood = Number(site_suitability.value);
     console.log(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
     let ATK = new Atk(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
     let total_ATK = ATK.getATK();
