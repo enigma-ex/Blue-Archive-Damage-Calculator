@@ -40,7 +40,7 @@
             "id" : "buff_percentage_ATK",
             "text" : "增益/減益效果(%)",
             "placeholder" : "增益/減益效果(預設+0%)",
-            "hint_text" : "減亦效果請加上負號"
+            "hint_text" : "減益效果請加上負號"
         }
     ]
 }
