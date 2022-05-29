@@ -34,10 +34,27 @@ class Damage {
     }
 }
 
+//parameter can more
+function not_number(){
+    let value = arguments;
+    for (let i=0;i<value.length;i++){
+        if (isNaN(value[i]))
+            return true;
+    }
+    return false;
+}
+
 function display(){
     let bATK, fATK, eATK, brATK, uwATK, buffpATK, buffvATK;
 
-    if(base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
+    if (not_number(base_ATK.value, favorability_ATK.value, equip_ATK.value,  
+    back_row_ATK.value, unique_weapon_ATK.value, 
+    buff_percentage_ATK.value, buff_value_ATK.value)){
+        alert("請輸入數字");
+        return;
+    }
+        
+    if (base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
         bATK = Number(base_ATK.value);
         fATK = Number(favorability_ATK.value);
         eATK = Number(equip_ATK.value);
@@ -67,6 +84,8 @@ function display(){
         console.log(buffvATK_set_sum);
         buffvATK = Number(buffvATK_set_sum);
     }
+    else
+        buffvATK = 0;
  
     if(buff_percentage_ATK.value !== ''){
         let buffpATK_set = document.getElementsByClassName("buff_percentage_ATK");
