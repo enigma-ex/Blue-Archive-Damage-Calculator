@@ -7,7 +7,7 @@ function handle_enter(event){
     }
 }
 
-function add_input_check(){
+function add_input_check(index){
     let add_item = document.createElement("div");
     add_item.className = "add_item";
 
@@ -24,14 +24,14 @@ function add_input_check(){
     delete_button.className = "button_type2";
     add_item.append(delete_button);
 
-    let add_input = document.getElementById("add_input");
+    let add_input = document.getElementById("add_input"+index);
     add_input.appendChild(add_item);
     delete_button.addEventListener('click',function(){
         this.parentNode.remove();
     })
 
     input_check.addEventListener('keydown',function(event){
-        let enter_to_add_input = document.getElementById('add_input').getElementsByTagName('input');
+        let enter_to_add_input = document.getElementById('add_input'+index).getElementsByTagName('input');
         let arr = Array.prototype.slice.call(enter_to_add_input);
         if (event.key === "Enter" && arr.indexOf(event.target) < arr.length - 1){
             arr[arr.indexOf(event.target) + 1].focus();
