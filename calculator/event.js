@@ -65,7 +65,7 @@ async function Tip(){
     const response = await fetch(src);
     const Tip_file = await response.json();
     const Tip_data = Tip_file["Tip"];
-    let Tip_output = document.getElementById("Tip-value");
+    let Tip_output = document.getElementsByClassName("output-value")[1];
     Tip_output.textContent = Tip_data[Math.floor(Math.random()*Tip_data.length)];
     console.log(Math.floor(Math.random()*Tip_data.length));
 }
