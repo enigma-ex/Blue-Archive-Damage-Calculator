@@ -21,7 +21,7 @@ class Atk {
     getATK() {
         let radix = this.base_ATK + this.favorability_ATK + this.back_row_ATK + this.unique_weapon_ATK + this.buff_value_ATK;
         let multiplier = 1 + (this.equip_ATK + this.buff_percentage_ATK) * 0.01;
-        let total_ATK = radix * multiplier * this.site_suitability;
+        let total_ATK = Math.round(radix * multiplier * this.site_suitability);
         console.log("radix =", radix, "multiplier =", multiplier, "total_ATK =", total_ATK);
         return total_ATK;
     }
@@ -108,7 +108,7 @@ function display(){
     let elValue = document.getElementById('output-value');
 
     elTitle.textContent = "角色攻擊力";
-    elValue.textContent = Math.floor(total_ATK);
+    elValue.textContent = total_ATK;
     
     popup();
 }
