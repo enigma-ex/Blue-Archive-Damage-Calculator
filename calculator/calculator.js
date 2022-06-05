@@ -111,6 +111,7 @@ function display(){
     elValue.textContent = total_ATK;
     
     popup();
+    Tip();
 }
 
 function fold_atk(){

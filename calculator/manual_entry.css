@@ -300,6 +300,15 @@ h1{
     color: rgb(220,80,20);
 }
 
+#Tip-title{
+    font-weight: 600;
+    color: rgb(0,43,79);
+}
+
+#Tip-value{
+    color: rgb(220,80,20);
+}
+
 #close-button{
     position: relative;
     top: 3px;

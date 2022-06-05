@@ -60,3 +60,12 @@ function close_window(){
     win.style.transform = 'scale(0, 0)';
 
 }
+async function Tip(){
+    const src = "./Tip.json";
+    const response = await fetch(src);
+    const Tip_file = await response.json();
+    const Tip_data = Tip_file["Tip"];
+    let Tip_output = document.getElementById("Tip-value");
+    Tip_output.textContent = Tip_data[Math.floor(Math.random()*Tip_data.length)];
+    console.log(Math.floor(Math.random()*Tip_data.length));
+}
