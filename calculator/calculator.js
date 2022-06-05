@@ -104,13 +104,11 @@ function display(){
     let ATK = new Atk(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
     let total_ATK = ATK.getATK();
 
-    let elTitle = document.getElementById('output-title');
-    let elValue = document.getElementById('output-value');
-
-    elTitle.textContent = "角色攻擊力";
+    let elValue = document.getElementsByClassName('output-value')[0];
     elValue.textContent = total_ATK;
     
     popup();
+    Tip();
 }
 
 function fold_atk(){
