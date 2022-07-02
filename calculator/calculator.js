@@ -7,21 +7,14 @@ class Character {
 }
 
 class Atk {
-    constructor(base_ATK, favorability_ATK, equip_ATK, back_row_ATK, unique_weapon_ATK, buff_value_ATK, buff_percentage_ATK, site_suitability) {
-        this.base_ATK = base_ATK;
-        this.favorability_ATK = favorability_ATK;
-        this.equip_ATK = equip_ATK;
-        this.back_row_ATK = back_row_ATK;
-        this.unique_weapon_ATK = unique_weapon_ATK;
-        this.buff_value_ATK = buff_value_ATK;
-        this.buff_percentage_ATK = buff_percentage_ATK;
-        this.site_suitability = site_suitability;
+    constructor(ATKdict) {
+        this.ATKdict = ATKdict;
     }
 
     getATK() {
-        let radix = this.base_ATK + this.favorability_ATK + this.back_row_ATK + this.unique_weapon_ATK + this.buff_value_ATK;
-        let multiplier = 1 + (this.equip_ATK + this.buff_percentage_ATK) * 0.01;
-        let total_ATK = Math.round(radix * multiplier * this.site_suitability);
+        let radix = this.ATKdict["base"] + this.ATKdict["fav"] + this.ATKdict["back"] + this.ATKdict["uni"] + this.ATKdict["buffv"];
+        let multiplier = 1 + (this.ATKdict["equip"] + this.ATKdict["buffp"]) * 0.01;
+        let total_ATK = Math.round(radix * multiplier * this.ATKdict["mood"]);
         console.log("radix =", radix, "multiplier =", multiplier, "total_ATK =", total_ATK);
         return total_ATK;
     }
@@ -45,7 +38,7 @@ function not_number(){
 }
 
 function display(){
-    let bATK, fATK, eATK, brATK, uwATK, buffpATK, buffvATK;
+    let ATKdict = {base: null, fav: null, equip: null, back: null, uni: null, buffv: null, buffp: null, mood: null};
 
     if (not_number(base_ATK.value, favorability_ATK.value, equip_ATK.value,  
     back_row_ATK.value, unique_weapon_ATK.value, 
@@ -55,9 +48,9 @@ function display(){
     }
         
     if (base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
-        bATK = Number(base_ATK.value);
-        fATK = Number(favorability_ATK.value);
-        eATK = Number(equip_ATK.value);
+        ATKdict["base"] = Number(base_ATK.value);
+        ATKdict["fav"] = Number(favorability_ATK.value);
+        ATKdict["equip"] = Number(equip_ATK.value);
     }
     else {
         alert("存在必填項無填入值");
@@ -65,14 +58,14 @@ function display(){
     }
 
     if(back_row_ATK.value !== '')
-        brATK = Number(back_row_ATK.value);
+        ATKdict["back"] = Number(back_row_ATK.value);
     else
-        brATK = 0;
+        ATKdict["back"] = 0;
 
     if(unique_weapon_ATK.value !== '')
-        uwATK = Number(unique_weapon_ATK.value);
+        ATKdict["uni"] = Number(unique_weapon_ATK.value);
     else
-        uwATK = 0;
+        ATKdict["uni"] = 0;
 
     if(buff_value_ATK.value !== ''){
         let buffvATK_set = document.getElementsByClassName("buff_value_ATK");
@@ -82,10 +75,10 @@ function display(){
             buffvATK_set_sum += Number(buffvATK_set[i].value);
         }
         console.log(buffvATK_set_sum);
-        buffvATK = Number(buffvATK_set_sum);
+        ATKdict["buffv"] = Number(buffvATK_set_sum);
     }
     else
-        buffvATK = 0;
+        ATKdict["buffv"] = 0;
  
     if(buff_percentage_ATK.value !== ''){
         let buffpATK_set = document.getElementsByClassName("buff_percentage_ATK");
@@ -94,14 +87,16 @@ function display(){
             buffpATK_set_sum += Number(buffpATK_set[i].value);
         }
         console.log(buffpATK_set_sum);
-        buffpATK = Number(buffpATK_set_sum);
+        ATKdict["buffp"] = Number(buffpATK_set_sum);
     }
     else
-        buffpATK = 0;
+        ATKdict["buffp"] = 0;
 
-   mood = Number(site_suitability.value);
-    console.log(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
-    let ATK = new Atk(bATK, fATK, eATK, brATK, uwATK, buffvATK, buffpATK, mood);
+    ATKdict["mood"] = Number(site_suitability.value);
+    for (key in ATKdict) {
+        console.log(key, ATKdict[key]);
+    }
+    let ATK = new Atk(ATKdict);
     let total_ATK = ATK.getATK();
 
     let elValue = document.getElementsByClassName('output-value')[0];
