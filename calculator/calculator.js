@@ -28,16 +28,6 @@ class Damage {
     }
 }
 
-//parameter can more
-function not_number(){
-    let value = arguments;
-    for (let i=0;i<value.length;i++){
-        if (isNaN(value[i]))
-            return true;
-    }
-    return false;
-}
-
 function display(){
     let ATKdict = {base: null, fav: null, equip: null, back: null, uni: null, buffv: null, buffp: null, mood: null};
 
@@ -105,6 +95,16 @@ function display(){
     
     popup();
     Tip();
+}
+
+//parameter can more
+function not_number(){
+    let value = arguments;
+    for (let i=0;i<value.length;i++){
+        if (isNaN(value[i]))
+            return true;
+    }
+    return false;
 }
 
 function fold_atk(){
