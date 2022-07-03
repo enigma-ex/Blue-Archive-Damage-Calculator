@@ -20,10 +20,11 @@ class Atk {
     }
 }
 
+//TODO
 class Damage {
-    constructor(ATK) {
+    constructor(ATK, DamageDict) {
         this.ATK = ATK;
-        //TODO
+        this.dDict = DamageDict;
     }
 }
 
