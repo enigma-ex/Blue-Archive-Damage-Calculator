@@ -60,6 +60,23 @@ function close_window(){
     win.style.transform = 'scale(0, 0)';
 
 }
+
+function fold_atk(){
+
+    let atk_field = document.getElementById("atk-field");
+    let fold_button_atk = document.getElementById("fold-button-atk");
+
+    if(atk_field.style.height === "auto") {
+        atk_field.style.height = 0;
+        fold_button_atk.textContent = "顯示攻擊力";
+    }
+    else {
+        atk_field.style.height = "auto";
+        fold_button_atk.textContent = "隱藏攻擊力";
+    }
+
+}
+
 async function Tip(){
     const src = "./Tip.json";
     const response = await fetch(src);
