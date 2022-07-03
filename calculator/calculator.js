@@ -1,3 +1,5 @@
+const ERROR = -1;
+
 class Character {
     constructor(ATK, Damage) {
         this.ATK = ATK;
@@ -37,51 +39,13 @@ function display(){
         alert("請輸入數字");
         return;
     }
-        
-    if (base_ATK.value !== '' && favorability_ATK.value !== '' && equip_ATK.value !== '') {
-        ATKdict["base"] = Number(base_ATK.value);
-        ATKdict["fav"] = Number(favorability_ATK.value);
-        ATKdict["equip"] = Number(equip_ATK.value);
-    }
-    else {
-        alert("存在必填項無填入值");
+    
+    if(requiredField(ATKdict, base_ATK.value, "base", favorability_ATK.value, "fav", equip_ATK.value, "equip") == ERROR)
         return;
-    }
 
-    if(back_row_ATK.value !== '')
-        ATKdict["back"] = Number(back_row_ATK.value);
-    else
-        ATKdict["back"] = 0;
+    defaultField(ATKdict, back_row_ATK.value, "back", 0, unique_weapon_ATK.value, "uni", 0);
 
-    if(unique_weapon_ATK.value !== '')
-        ATKdict["uni"] = Number(unique_weapon_ATK.value);
-    else
-        ATKdict["uni"] = 0;
-
-    if(buff_value_ATK.value !== ''){
-        let buffvATK_set = document.getElementsByClassName("buff_value_ATK");
-        console.log(buffvATK_set, "V");
-        let buffvATK_set_sum = Number(buff_value_ATK.value);
-        for (let i=0;i<buffvATK_set.length;i++){
-            buffvATK_set_sum += Number(buffvATK_set[i].value);
-        }
-        console.log(buffvATK_set_sum);
-        ATKdict["buffv"] = Number(buffvATK_set_sum);
-    }
-    else
-        ATKdict["buffv"] = 0;
- 
-    if(buff_percentage_ATK.value !== ''){
-        let buffpATK_set = document.getElementsByClassName("buff_percentage_ATK");
-        let buffpATK_set_sum = Number(buff_percentage_ATK.value);
-        for (let i=0;i<buffpATK_set.length;i++){
-            buffpATK_set_sum += Number(buffpATK_set[i].value);
-        }
-        console.log(buffpATK_set_sum);
-        ATKdict["buffp"] = Number(buffpATK_set_sum);
-    }
-    else
-        ATKdict["buffp"] = 0;
+    flexibleField(ATKdict, buff_value_ATK.value, "buffv", "buff_value_ATK", 0, buff_percentage_ATK.value, "buffp", "buff_percentage_ATK", 0);
 
     ATKdict["mood"] = Number(site_suitability.value);
     for (key in ATKdict) {
@@ -97,7 +61,7 @@ function display(){
     Tip();
 }
 
-//parameter can more
+// parameter can more
 function not_number(){
     let value = arguments;
     for (let i=0;i<value.length;i++){
@@ -105,6 +69,73 @@ function not_number(){
             return true;
     }
     return false;
+}
+
+// example: requiredField(Dict, fieldValue1, DictKey1, fieldValue2, DictKey2, ... );
+// values[i]:     fieldValue
+// values[i + 1]: DictKey
+function requiredField(Dict) {
+
+    let values = arguments;
+    for(let i = 1;i < values.length;i+=2) {
+
+        if(values[i] == '') {
+            alert("存在必填項無填入值");
+            return ERROR;
+        }
+        else
+            Dict[values[i + 1]] = Number(values[i]);
+        
+    }
+
+    return 0;
+
+}
+
+// example: defaultField(Dict, fieldValue1, DictKey1, defaultValue1, fieldValue2, DictKey2, defaultValue2, ... );
+// values[i]:     fieldValue
+// values[i + 1]: DictKey
+// values[i + 2]: defaultValue
+function defaultField(Dict) {
+
+    let values = arguments;
+    for(let i = 1;i < values.length;i+=3) {
+
+        if(values[i] == '')
+            Dict[values[i + 1]] = values[i + 2];
+        else
+            Dict[values[i + 1]] = Number(values[i]);
+
+    }
+
+}
+
+// example: flexibleField(Dict, fieldValue1, DictKey1, ClassName1, defaultValue1, fieldValue2, DictKey2, ClassName2, defaultValue2, ... );
+// values[i]:     fieldValue
+// values[i + 1]: DictKey
+// values[i + 2]: CalssName
+// values[i + 3]: defaultValue
+function flexibleField(Dict) {
+
+    let values = arguments;
+    for(let i = 1;i < values.length;i+=4) {
+
+        if(values[i] !== ''){
+
+            let set = document.getElementsByClassName(values[i + 2]);
+            let set_sum = Number(values[i]);
+            for (let j = 0;j < set.length;j++){
+                set_sum += Number(set[j].value);
+            }
+            console.log(set_sum);
+            Dict[values[i + 1]] = Number(set_sum);
+
+        }
+        else
+            Dict[values[i + 1]] = values[i + 3];
+
+    }
+
 }
 
 function fold_atk(){
