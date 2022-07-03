@@ -21,7 +21,7 @@ function add_input_check(value_or_percentage){
     else if (value_or_percentage === "percentage") {
         input_check.className = "buff_percentage_ATK";
         input_check.placeholder = "增益/減益效果(預設+0%)";
-   }
+    }
     add_item.appendChild(input_check);
     let delete_button = document.createElement("button");
     delete_button.textContent = "刪除";
