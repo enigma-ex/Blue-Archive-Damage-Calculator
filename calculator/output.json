@@ -42,5 +42,79 @@
             "placeholder" : "增益/減益效果(預設+0%)",
             "hint_text" : "減益效果請加上負號"
         }
+    ],
+    "critical_rate" : [
+        {
+            "id" : "critical_value",
+            "text" : "會心值",
+            "placeholder" : "會心值",
+            "hint_text" : "可以從角色詳細面板看到"
+        },
+        {
+            "id" : "enemy_critical_resist_value",
+            "text" : "敵方會心抵抗值",
+            "placeholder" : "敵方會心抵抗值",
+            "hint_text" : "上網查"
+        }
+    ],
+    "critical_damage" : [
+        {
+            "id" : "base_critical_damage",
+            "text" : "面板會心傷害",
+            "placeholder" : "面板會心傷害",
+            "hint_text" : "可以從角色詳細面板看到"
+        },
+        {
+            "id" : "skill_critical_damage_buff",
+            "text" : "技能會心傷害增減",
+            "placeholder" : "技能會心傷害增減(%)",
+            "hint_text" : "可以從角色技能看到"
+        },
+        {
+            "id" : "enemy_base_critical_damage_resist",
+            "text" : "敵方基礎會心傷害抵抗",
+            "placeholder" : "敵方基礎會心傷害抵抗",
+            "hint_text" : "上網查"
+        },
+        {
+            "id" : "enemy_equip_critical_damage_resistance",
+            "text" : "敵方裝備會心傷害抵抗",
+            "placeholder" : "敵方裝備會心傷害抵抗(預設0)",
+            "hint_text" : "上網查"
+        },
+        {
+            "id" : "enemy_skill_critical_damage_resist",
+            "text" : "敵方技能會心傷害抵抗增減",
+            "placeholder" : "敵方技能會心傷害抵抗增減(%)",
+            "hint_text" : "上網查"
+        }
+    ],
+    "stablize_rate" : [
+        {
+            "id" : "stablize_value",
+            "text" : "安定值",
+            "placeholder" : "安定值",
+            "hint_text" : "可以在角色詳細面板看到"
+        }
+    ],
+    "normal_damage" : [
+        {
+            "id" : "ATK_skill_multiplier",
+            "text" : "攻擊技倍率",
+            "placeholder" : "攻擊技倍率(%)",
+            "hint_text" : "可以在技能欄看到"
+        },
+        {
+            "id" : "enemy_DEF",
+            "text" : "敵人防禦力",
+            "placeholder" : "敵人防禦力",
+            "hint_text" : "上網查"
+        },
+        {
+            "id" : "DEF_buff_skill",
+            "text" : "防禦增減技",
+            "placeholder" : "防禦增減技",
+            "hint_text" : "可以在技能欄看到"
+        }
     ]
 }
